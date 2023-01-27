@@ -42,6 +42,11 @@ const SidebarMain= ()=> {
               <i class="bi bi-circle"></i><span>Data Customers</span>
             </a>
           </li>
+          <li>
+            <a href="/logout">
+              <i class="bi bi-circle"></i><span>LogOut</span>
+            </a>
+          </li>
         </ul>
       </li>
       {/* End Components Nav */}

@@ -6,6 +6,7 @@ import Login from "./formLogin/LoginForm";
 import CustomersRedux from "./pages/customersRedux";
 import AddCustRedux from "./pages/addCustomersRedux";
 import EditCustRedux from "./pages/editCustRedux";
+
 const Path = ()=>{
     return(
     <BrowserRouter>
@@ -16,6 +17,7 @@ const Path = ()=>{
             <Route path="/customers" element={<CustomersRedux/>}/>
             <Route path="/addcust" element={<AddCustRedux/>}/>
             <Route path="/editcust" element={<EditCustRedux/>}/>
+            <Route path="/logout" element={<Logout><Login/></Logout>}/>
         </Routes>
     </BrowserRouter>
     )
@@ -26,6 +28,13 @@ const PrivateRoute = (props)=>{
     if (!token)
         return <Navigate to='/login'/>
         return props.children
+}
+
+const Logout = (props)=>{
+    const deletToken = localStorage.removeItem('token')
+    if(deletToken)
+    return <Navigate to='/login'/>
+    return props.children
 }
 
 export default Path

@@ -48,7 +48,7 @@ const CustomersRedux = () =>{
                             <td>{customers.custName}</td>
                             <td>{customers.custCity}</td>
                             <td><button class="btn btn-warning"  onClick={()=>editdata(customers.custId)}>edit</button></td>
-                            <td><button class="btn btn-danger">delete</button></td>
+                            <td><button class="btn btn-danger"  onClick={()=>deletedata(customers.custId)}>delete</button></td>
                         </tr>
                     ) 
                     })
